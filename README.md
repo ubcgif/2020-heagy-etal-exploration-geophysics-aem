@@ -1,75 +1,35 @@
-# Template repository for papers by the GIF group
+# Open-source software for simulations and inversions of airborne electromagnetic data
 
-Please use this repository as a template for papers
+_Lindsey J. Heagy, Seogi Kang, Rowan Cockett and Douglas W. Oldenburg_
 
-## Repository name
+https://doi.org/10.1080/08123985.2019.1583538
 
-The naming convention should follow 
-
-```
-year-authors-journal-short-title
-```
-
-As an example for two authors: 
-```
-2023-heagy-oldenburg-gji-casing-permeability
-```
-
-if there are more than 2 authors, you can use `etal` to indicate multiple authors, e.g. 
-```
-2024-heagy-etal-tle-future-of-applied-geophysics
-```
-
-## Contents
-
-The paper should be put in a `paper` folder. You can put the original latex there. The published pdf from the journal should also be included here. 
-
-Please also include a `thumbnail.png`. This should be a high-impact figure from the paper. 
-
-## MyST.md
-
-The key file that you will need to update is the `myst.yml` file which is located in the `paper` folder. You will need to fill out the fields that are currently commented out. 
-
-The project id should follow the pattern `ubcgif-YEAR-AUTHORS-JOURNAL`, e.g. `ubcgif-2023-heagy-oldenburg-gji` or `2024-heagy-etal-tle`
-
-Descriptions of the fields is available here: https://mystmd.org/guide/frontmatter#available-frontmatter-fields
-
-## Previewing the site
-
-You can preview the build using MyST. Please have MyST installed ([instructions](https://mystmd.org/guide/installing)). From the `paper` folder, you can then run 
-
-```
-myst start
-```
-
-and a preview will launch, usually from `http://localhost:3000`
-
-Also, whenever you create a pull-request to the repo, curvenote will build you a preview 🚀. A link will be added to the comment thread that looks something like this 
-
-![image](https://github.com/ubcgif/template-repository-paper/assets/6361812/b7a144c5-8458-474b-98c4-9e5890ac859e)
-
-
-## README 
-Please use the following as a template for the 
-```
-# Template repository for papers
-
-_Authors_
-
-[https://doi.org/XXX](https://doi.org/XXX)
-
-![thumbnail](./paper/thumbnail.png)
+![magnetic flux](./paper/thumbnail.png)
 
 ## Summary
 
-Summary of the paper here (pulled from abstract/summary of paper) 
+Inversions of airborne EM data are often an iterative process, not only requiring that the researcher be able to explore the impact of changing components such as the choice of regularization functional or model parameterization, but also often requiring that forward simulations be run and fields and fluxes visualized in order to build an understanding of the physical processes governing what we observe in the data. In the hope of facilitating this exploration and promoting reproducibility of geophysical simulations and inversions, we have developed the open source software package, SimPEG. The software has been designed to be modular and extensible with the goal of allowing researchers to interrogate all of the components and to facilitate the exploration of new inversion strategies. We present an overview of the software in its application to airborne EM and demonstrate its use for visualizing fields and fluxes in a forward simulation as well as its flexibility in formulating and solving the inverse problem. We invert a line of airborne TDEM data over a conductive vertical plate using a 1D voxel-inversion, a 2D voxel inversion and a parametric inversion, where all of the forward modelling is done on a 3D grid. The results in this paper can be reproduced  by using the provided Jupyter notebooks. The Python software can also be modified to allow users to experiment with parameters and explore the physics of the electromagnetics and intricacies of inversion.
+ 
 
 ## Citation
 
-Please include the formatted citation along with bibtex for the reference
+Heagy, L. J., Kang, S., Cockett, R., & Oldenburg, D. W. (2019). Open-source software for simulations and inversions of airborne electromagnetic data. Exploration Geophysics, 51(1), 38–44. https://doi.org/10.1080/08123985.2019.1583538
 
 ```
+@article{heagy_open_2020,
+         author = {Lindsey J. Heagy, Seogi Kang, Rowan Cockett and Douglas W. Oldenburg},
+         title = {Open-source software for simulations and inversions of airborne electromagnetic data},
+         journal = {Exploration Geophysics},
+         volume = {51},
+         number = {1},
+         pages = {38--44},
+         year = {2020},
+         publisher = {Taylor \& Francis},
+         doi = {10.1080/08123985.2019.1583538},
+         URL = {https://doi.org/10.1080/08123985.2019.1583538}  
+}
 
-## Examples
-- https://github.com/ubcgif/2023-heagy-oldenburg-gji-casing-permeability
-- https://github.com/ubcgif/2024-heagy-etal-tle-future-of-applied-geophysics
+
+
+
+```
