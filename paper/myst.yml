@@ -2,8 +2,8 @@
 version: 1
 project:
   id: ubcgif-2020-heagy-etal-exploration-geophysics
-  # title: TITLE OF PAPER
-  # description: SHORT DESCRIPTION HERE
+  title: Open-source software for simulations and inversions of airborne electromagnetic data
+  description: overview of the software in its application to airborne electromagnetics and demonstrate its use for visualising fields and fluxes in a forward simulation, as well as its flexibility in formulating and solving the inverse problem.
   authors:
     # - name: AUTHOR 1
     #   email: EMAIL
