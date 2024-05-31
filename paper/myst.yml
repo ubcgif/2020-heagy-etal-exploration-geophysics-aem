@@ -27,7 +27,7 @@ project:
   doi: 10.1080/08123985.2019.1583538
   arxiv: 1902.08238
   github: https://github.com/simpeg-research/heagy-2018-AEM
-  date: 2019/06/10 # date of publication
+  date: 2020/01/01 # date of publication
   # license: CC-BY-4.0  # uncomment this and the line below if open access
   # open_access: true
   venue:
@@ -53,5 +53,5 @@ site:
   template: article-theme
   actions:
     - title: pdf
-      url: Open-source software for simulations and inversions of airborne electromagnetic data.pdf
+      url: heagy-etal-2020-exploration-geophysics.pdf
       static: true
