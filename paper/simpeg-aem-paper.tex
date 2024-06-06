@@ -49,7 +49,7 @@ Inversions of airborne EM data are often an iterative process, not only requirin
 \end{abstract}
 
 
-\section{INTRODUCTION $\&$ MOTIVATION}
+\section{Introduction $\&$ motivation}
 Even for a simple model of a conductive vertical plate in a resistive half-space, the contributions of the diffusing ``smoke ring'' currents which intersect the plate, and vortex currents induced by the time-varying magnetic flux through the plate to the observed airborne EM signal can be challenging to unravel. These challenges are exacerbated if the background has significant structure or if other physical properties such as magnetic permeability or chargeability are significant. Dissecting and understanding the physical phenomena that produce the data which we observe in an airborne EM survey requires that we have the ability to simulate Maxwell's equations and visualize currents and magnetic fields through time or over a range of frequencies for a variety of models, which might be 1D, 2D, or 3D in space.
 
 Beyond building a fundamental understanding of the physics governing an airborne EM response, extracting meaningful geologic information from airborne EM data requires that we have the ability to invert those data. EM inversions are nonlinear and thus the choice of regularization and selection of tuning parameters can have a significant impact on the recovered model. To progress research into extracting more geologic or hydrogeologic information from airborne in an inversion, researchers require the flexibility to experiment with aspects of the inverse problem including the regularization and tuning parameters, but also aspects such as the dimensionality of the numerical simulation and definition of the inversion model (e.g. voxel or a parametric model). Looking forward, we also want the ability to interface to other geophysical methods through joint or cooperative inversions.
@@ -67,7 +67,7 @@ In what follows, we will demonstrate the use of SimPEG for simulations and inver
 In the examples that follow, we will use a model of a conductive, vertical plate in a resistive half-space. This is a problem of relevance in mineral exploration, brings to light a number of fundamental aspects of electromagnetics, and is a challenging inverse problem, particularly as 1D inversions cannot explain the 3D nature of the model. We will look at the behaviour of currents through time and demonstrate the multi-dimensional nature of the EM responses and then conduct 1D and 2D inversions of synthetic airborne TDEM data over the plate. The examples have purposefully been kept computationally lightweight so that they can be run in a moderate amount of time on a modern laptop. The source code for each of these examples is available as a Jupyter notebook at
 \href{https://github.com/simpeg-research/heagy-2018-AEM}{https://github.com/simpeg-research/heagy-2018-AEM} \citep{Heagy2018}.
 
-\subsection{Airborne TDEM response over a conductive plate}
+\section{Airborne TDEM response over a conductive plate}
 The model and simulation mesh we consider is shown in Figure \ref{fig:model}. A 100 m thick conductive plate (0.1 S/m) is embedded 50 m below the surface. The plate is 400 m tall and extends 850 m along the x-axis. The background conductivity is $10^{-3}$ S/m. One line of airborne TDEM data is computed along y=0m; the source waveform is a step-off waveform, and vertical $db/dt$ data are collected at 21 time-channels between 0.05 and 2.5ms. The simulation is performed in 3D on a tensor mesh.
 
 \begin{figure}[!htb]
@@ -108,7 +108,7 @@ At larger offsets, the plate still contributes to a larger signal as the smoke r
 At intermediate times (0.1ms) the background field has set up strong vortex currents within the plate. By the time that the vortex currents are fully engaged, the galvanic currents are decaying, so at later times (0.5ms) the vortex currents dominate. The vortex currents effectively generate a horizontal magnetic dipole which has a positive vertical field at the receiver, as can be seen in Figure \ref{fig:magnetic_flux}c. It is this horizontal dipole contribution that leads to the double peak observed in the late-time data in Figure \ref{fig:data}.
 
 
-\subsection{Stitched 1D inversion of AEM data}
+\section{Stitched 1D inversion of AEM data}
 When inverting airborne EM data, 1D inversions are commonplace. They have the benefit that each sounding is a relatively inexpensive computation and that the inversion can be readily parallelized over soundings. A basic 1D inversion will treat each sounding independently; more advanced 1D inversions may include lateral or spatial constraints in the regularization to promote smooth variation in the model between stations \citep{Viezzoli2008,Viezzoli2009}. For this example, we adopt the basic approach, inverting and regularizing each sounding independently. The extension to laterally or spatially constrained regularization can be considered within the SimPEG framework.
 
 For each of the 1D inversions, the forward simulation is conducted on a cylindrically symmetric mesh. We perform a Tikhonov-style inversion \citep{Tikhonov1977}, which states the inverse problem as an optimization problem in which we minimize an objective function composed of a data-misfit term, $\phi_d$, and a regularization functional, $\phi_m$.
@@ -133,7 +133,7 @@ The recovered model and associated predicted data are shown in Figure \ref{fig:1
 \end{figure}
 
 
-\subsection{2D inversions of AEM data}
+\section{2D inversions of AEM data}
 
 In both of the following inversions, the forward modelling is conducted on a 3D tensor mesh, while the inversion model we consider is 2D. To populate the 3D space with physical properties, the 2D slice is simply surjected along the y-axis; within SimPEG, this is handled by the Maps class. \cite{kang2015c} contains further discussion on the Maps class and how it appropriately modifies the sensitivity.
 
