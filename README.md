@@ -29,7 +29,4 @@ Heagy, L. J., Kang, S., Cockett, R., & Oldenburg, D. W. (2019). Open-source soft
          URL = {https://doi.org/10.1080/08123985.2019.1583538}  
 }
 
-
-
-
 ```
